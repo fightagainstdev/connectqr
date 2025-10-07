@@ -18,7 +18,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: process.env.NODE_ENV === "production" ? undefined : "http://localhost:5173",
     credentials: true, // allow frontend to send cookies
   })
 );
